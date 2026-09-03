@@ -1,0 +1,18 @@
+.button {
+  display: block;
+  margin: var(--space-lg) auto;
+  padding: var(--space-md) var(--space-xl);
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1.5px solid var(--color-border);
+  font-size: var(--font-size-base);
+  color: var(--color-text);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.button:active {
+  transform: scale(0.95) rotate(-5deg);
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}

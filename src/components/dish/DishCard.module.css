@@ -1,0 +1,189 @@
+.card {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-border-light);
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+  position: relative;
+  user-select: none;
+  cursor: pointer;
+}
+
+.card:active {
+  transform: scale(0.98);
+}
+
+.cardSelected {
+  border-color: rgba(206, 101, 111, 0.35);
+  box-shadow: 0 4px 16px rgba(206, 101, 111, 0.08);
+}
+
+/* 4:3 优雅相框比例裁切 */
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.placeholderEmoji {
+  font-size: 38px;
+  filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.08));
+  z-index: 1;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.22s ease-out;
+  z-index: 2;
+}
+
+.imageVisible {
+  opacity: 1;
+}
+
+/* 烹饪时长小徽章 */
+.timeBadge {
+  position: absolute;
+  bottom: 7px;
+  right: 7px;
+  z-index: 3;
+  background: rgba(36, 32, 30, 0.58);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  color: #ffffff;
+  font-size: 10.5px;
+  font-weight: 500;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.2px;
+}
+
+/* 内容区域 */
+.content {
+  padding: 10px 11px 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.headerRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 3px;
+}
+
+.name {
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  line-height: 1.35;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 元数据行 */
+.meta {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.difficulty {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.dot {
+  opacity: 0.35;
+}
+
+/* 标签行 */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 10px;
+  min-height: 20px;
+}
+
+/* 加入按钮操作区 */
+.actionRow {
+  margin-top: auto;
+}
+
+.actionBtn {
+  width: 100%;
+  height: 34px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  transition: all 0.18s ease;
+  border: none;
+  outline: none;
+}
+
+.actionBtn:active {
+  transform: scale(0.96);
+}
+
+.btnContent {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* 未加入状态：柔和清爽底，温和文字 */
+.btnUnselected {
+  background: var(--color-surface-subtle);
+  color: var(--color-text);
+}
+
+.btnUnselected:hover {
+  background: #edeae3;
+}
+
+.iconPlus {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+/* 已加入状态：温润陶土粉，纯白对勾，克制优雅 */
+.btnSelected {
+  background: var(--color-primary);
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(206, 101, 111, 0.28);
+}
+
+.iconCheck {
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.btnText {
+  font-size: var(--font-size-xs);
+  letter-spacing: 0.3px;
+}

@@ -1,0 +1,180 @@
+/* ===== 生活感·温润高品质设计系统 ===== */
+:root {
+  /* 品牌色系：克制、温润的陶土玫瑰色，柔和舒适不喧宾夺主 */
+  --color-primary: #CE656F;
+  --color-primary-light: #FAF1F2;
+  --color-primary-dark: #B54D57;
+  --color-primary-bg: rgba(206, 101, 111, 0.06);
+
+  /* 辅助与状态色 */
+  --color-accent: #C88846;
+  --color-success: #529B65;
+  --color-danger: #D65A5A;
+
+  /* 背景与卡片：温润燕麦米白底，还原手账与居家氛围 */
+  --color-bg: #F8F6F2;
+  --color-surface: #FFFFFF;
+  --color-surface-subtle: #F4F2EC;
+
+  /* 文字系统：细腻炭黑与暖灰 */
+  --color-text: #282829;
+  --color-text-secondary: #7E7E84;
+  --color-text-light: #B4B4B9;
+  --color-border: #ECE7E0;
+  --color-border-light: #F2EFE9;
+
+  /* 分类底色：低饱和度柔和暖色，彻底告别刺眼渐变与卡通感 */
+  --color-cat-meat: #F6EDED;
+  --color-cat-veggie: #EEF3ED;
+  --color-cat-soup: #F8F2E8;
+  --color-cat-staple: #F3EFE9;
+  --color-cat-dessert: #F5EDF1;
+
+  /* 字体系统 */
+  --font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+  --font-size-xs: 11px;
+  --font-size-sm: 13px;
+  --font-size-base: 15px;
+  --font-size-lg: 17px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 23px;
+
+  /* 呼吸间距体系 */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 22px;
+  --space-xl: 30px;
+
+  /* 圆角 */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 22px;
+  --radius-full: 999px;
+
+  /* 细腻柔光微阴影 */
+  --shadow-sm: 0 1px 4px rgba(40, 36, 33, 0.03), 0 3px 10px rgba(40, 36, 33, 0.02);
+  --shadow-md: 0 4px 16px rgba(40, 36, 33, 0.05);
+  --shadow-lg: 0 10px 30px rgba(40, 36, 33, 0.08);
+
+  /* 布局与 iPhone / Android 安全区 */
+  --tabbar-height: 54px;
+  --safe-area-top: env(safe-area-inset-top, 0px);
+  --safe-area-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* ===== 全局重置 ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 全局防内容撑破产生横向滚动条 */
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+html {
+  font-size: var(--font-size-base);
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+  background-color: var(--color-bg);
+  /* 防止微信浏览器在 iOS/Android 上由于下拉产生不自然的橡皮筋白屏 */
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  line-height: 1.5;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* 移动端禁用默认长按文本选中（在输入框中单独开放） */
+  -webkit-user-select: none;
+  user-select: none;
+  /* 消除 300ms 点击延迟 */
+  touch-action: manipulation;
+}
+
+#root {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  background-color: var(--color-bg);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.02);
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  touch-action: manipulation;
+}
+
+button {
+  font-family: inherit;
+  font-size: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: inherit;
+  -webkit-appearance: none;
+  touch-action: manipulation;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* 重点修复：iOS Safari 下 input 和 textarea 若字号小于 16px，
+   聚焦时会强行放大整个视口导致左右横向滚动！基准字号必须设置为 16px */
+input,
+textarea {
+  font-family: inherit;
+  font-size: 16px !important;
+  border: none;
+  outline: none;
+  background: none;
+  -webkit-appearance: none;
+  /* 输入框内允许用户正常选中文本、移动光标、复制粘贴 */
+  -webkit-user-select: auto !important;
+  user-select: auto !important;
+}
+
+textarea {
+  resize: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  -webkit-user-drag: none;
+  user-drag: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+/* ===== 页面通用容器与安全区域避让 ===== */
+.page {
+  flex: 1;
+  padding-bottom: calc(var(--tabbar-height) + var(--safe-area-bottom) + var(--space-md));
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.page--full {
+  padding-bottom: calc(var(--safe-area-bottom) + var(--space-md));
+}
+
+.page-content {
+  padding: 0 var(--space-md);
+}

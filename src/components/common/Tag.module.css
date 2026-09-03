@@ -1,0 +1,20 @@
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 1.5px 7px;
+  border-radius: var(--radius-full);
+  font-size: 10.5px;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.default {
+  background: var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+}
+
+.primary {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 500;
+}

@@ -1,0 +1,56 @@
+/* 底部浮动条出现时的底部间距避让 */
+.pageWithFloatingBar {
+  padding-bottom: calc(var(--tabbar-height) + var(--safe-area-bottom) + 76px) !important;
+}
+
+/* “今天不知道吃什么” 入口横幅 */
+.recommendBannerWrapper {
+  padding: 0 var(--space-md) 14px;
+}
+
+.recommendBtn {
+  width: 100%;
+  height: 44px;
+  padding: 0 14px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.16s ease;
+  user-select: none;
+}
+
+.recommendBtn:active {
+  transform: scale(0.98);
+  background: var(--color-surface-subtle);
+}
+
+.recommendBtnLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.diceIcon {
+  font-size: 15px;
+  line-height: 1;
+}
+
+.recommendTitle {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-text);
+  letter-spacing: 0.1px;
+}
+
+.recommendArrow {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+}

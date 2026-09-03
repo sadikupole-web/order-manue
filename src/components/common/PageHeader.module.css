@@ -1,0 +1,40 @@
+.header {
+  padding-top: calc(16px + var(--safe-area-top));
+  padding-bottom: 14px;
+  padding-left: var(--space-md);
+  padding-right: var(--space-md);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.titleArea {
+  flex: 1;
+  min-width: 0;
+}
+
+.title {
+  font-size: var(--font-size-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  line-height: 1.32;
+  letter-spacing: -0.3px;
+  /* 防止超长文字溢出 */
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: 4px;
+  line-height: 1.45;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.rightAction {
+  padding-top: 2px;
+  flex-shrink: 0;
+}

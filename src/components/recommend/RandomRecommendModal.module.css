@@ -1,0 +1,238 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-md);
+  z-index: 1000;
+  animation: fadeIn 0.18s ease-out;
+}
+
+.dialog {
+  width: 100%;
+  max-width: 320px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 22px 16px 18px;
+  box-shadow: 0 12px 36px rgba(40, 36, 33, 0.14);
+  position: relative;
+  animation: popIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid var(--color-border-light);
+}
+
+.closeBtn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: none;
+  transition: transform 0.15s ease;
+}
+
+.closeBtn:active {
+  transform: scale(0.9);
+}
+
+/* 头部 */
+.header {
+  text-align: center;
+  margin-bottom: 14px;
+}
+
+.titleIcon {
+  font-size: 26px;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+
+.title {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 3px;
+}
+
+.subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* 推荐列表 */
+.dishList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 18px;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.dishListRolling {
+  opacity: 0.35;
+  transform: scale(0.98);
+}
+
+.dishCard {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  background: var(--color-surface-subtle);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.dishThumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dishEmoji {
+  font-size: 20px;
+}
+
+.dishImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dishInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.dishNameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 5px;
+  margin-bottom: 1px;
+}
+
+.dishName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catBadge {
+  font-size: 10px;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.dishMeta {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+}
+
+/* 底部操作行 */
+.actionRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rerollBtn {
+  flex: 1;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-subtle);
+  color: var(--color-text);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: transform 0.15s ease;
+}
+
+.rerollBtn:active {
+  transform: scale(0.96);
+  background: #eae7df;
+}
+
+.rerollIcon {
+  font-size: 14px;
+  display: inline-block;
+  transition: transform 0.28s ease;
+}
+
+.rerollSpin {
+  transform: rotate(360deg);
+}
+
+.acceptBtn {
+  flex: 1.3;
+  height: 40px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  box-shadow: 0 3px 12px rgba(206, 101, 111, 0.28);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.15s ease;
+}
+
+.acceptBtn:active {
+  transform: scale(0.96);
+  background: var(--color-primary-dark);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

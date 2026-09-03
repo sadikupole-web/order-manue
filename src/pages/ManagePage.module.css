@@ -1,0 +1,656 @@
+.backBtn {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  font-weight: 500;
+  border: 1px solid rgba(206, 101, 111, 0.2);
+  transition: opacity 0.16s ease;
+}
+
+.backBtn:active {
+  opacity: 0.7;
+}
+
+/* 顶部控制栏 */
+.topControlArea {
+  padding: 0 var(--space-md) 14px;
+}
+
+.createBtn {
+  width: 100%;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(206, 101, 111, 0.25);
+  border: none;
+  margin-bottom: 12px;
+  transition: transform 0.16s ease;
+}
+
+.createBtn:active {
+  transform: scale(0.97);
+  background: var(--color-primary-dark);
+}
+
+.plusSign {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* 分类水平滚动 */
+.categoryScroll {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding: 2px 0;
+}
+
+.categoryScroll::-webkit-scrollbar {
+  display: none;
+}
+
+.catTab {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 13px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: all 0.16s ease;
+}
+
+.catTabActive {
+  background: var(--color-primary-light);
+  border-color: rgba(206, 101, 111, 0.35);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* 菜品卡片列表 */
+.dishList {
+  padding: 0 var(--space-md) var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.manageCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: 12px 14px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.cardHeader {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.dishThumb {
+  width: 50px;
+  height: 50px;
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dishEmoji {
+  font-size: 24px;
+}
+
+.dishImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dishMainInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.nameRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-bottom: 3px;
+}
+
+.dishName {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.categoryBadge {
+  font-size: 10.5px;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 1.5px 7px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.metaRow {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.difficultyText {
+  color: var(--color-accent);
+  font-weight: 500;
+}
+
+.metaDot {
+  opacity: 0.35;
+}
+
+/* 标签组 */
+.tagGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 8px;
+}
+
+.dishTag {
+  font-size: 10.5px;
+  color: var(--color-text-secondary);
+  background: var(--color-surface-subtle);
+  padding: 2px 7px;
+  border-radius: 4px;
+}
+
+/* 食材概览 */
+.ingredientSummary {
+  background: var(--color-surface-subtle);
+  border-radius: 6px;
+  padding: 7px 9px;
+  font-size: 11.5px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.ingredientSummaryLabel {
+  color: var(--color-text-secondary);
+  font-weight: 500;
+}
+
+.ingredientSummaryText {
+  color: var(--color-text);
+}
+
+/* 卡片底部操作按钮 */
+.cardActions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+  border-top: 1px solid var(--color-border-light);
+  padding-top: 8px;
+}
+
+.editBtn,
+.deleteBtn {
+  font-size: var(--font-size-xs);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+  border: none;
+  transition: all 0.16s ease;
+}
+
+.editBtn {
+  background: #f1f8f3;
+  color: #3f7b4e;
+  border: 1px solid rgba(82, 155, 101, 0.25);
+}
+
+.editBtn:active {
+  transform: scale(0.95);
+  background: #e3f2e7;
+}
+
+.deleteBtn {
+  background: #fdf5f5;
+  color: var(--color-danger);
+  border: 1px solid rgba(214, 90, 90, 0.2);
+}
+
+.deleteBtn:active {
+  transform: scale(0.95);
+  background: #fbebee;
+}
+
+.emptyTip {
+  text-align: center;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  padding: 40px var(--space-md);
+}
+
+/* Modal 遮罩与弹窗 */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.45);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+.modalContainer {
+  width: 100%;
+  max-width: 480px;
+  max-height: 86vh;
+  background: #ffffff;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  padding: 18px var(--space-md) calc(18px + var(--safe-area-bottom));
+  display: flex;
+  flex-direction: column;
+  animation: slideUp 0.24s cubic-bezier(0.18, 1, 0.28, 1);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.modalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 5;
+  padding-bottom: 4px;
+}
+
+.modalTitle {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.closeBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  border: none;
+}
+
+.closeBtn:active {
+  transform: scale(0.9);
+}
+
+/* 表单排版 */
+.modalForm {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.formRow {
+  display: flex;
+  gap: 10px;
+}
+
+.flex1 {
+  flex: 1;
+}
+
+.formLabel {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.labelHint {
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.textInput {
+  width: 100%;
+  height: 40px;
+  padding: 0 11px;
+  background: var(--color-surface-subtle);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  transition: border-color 0.16s ease, background-color 0.16s ease;
+}
+
+.textInput:focus {
+  background: #ffffff;
+  border-color: var(--color-primary);
+}
+
+/* 单选 Pills */
+.radioPills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.pillBtn {
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-subtle);
+  border: 1px solid transparent;
+  font-size: var(--font-size-xs);
+  color: var(--color-text);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.16s ease;
+}
+
+.pillBtn:active {
+  transform: scale(0.95);
+}
+
+.pillActive {
+  background: var(--color-primary-light);
+  border-color: rgba(206, 101, 111, 0.35);
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+/* 图片预览 */
+.imgPreviewWrapper {
+  margin-top: 6px;
+  position: relative;
+  width: 100%;
+  height: 90px;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid var(--color-border);
+}
+
+.imgPreview {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.previewHint {
+  position: absolute;
+  bottom: 4px;
+  right: 6px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #ffffff;
+  font-size: 10px;
+  padding: 1px 6px;
+  border-radius: var(--radius-full);
+}
+
+/* 动态食材 */
+.ingredientHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+
+.addIngBtn {
+  font-size: 11.5px;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  border: 1px solid rgba(206, 101, 111, 0.2);
+  transition: opacity 0.16s ease;
+}
+
+.addIngBtn:active {
+  opacity: 0.7;
+}
+
+.ingredientTable {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.ingredientRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ingNameInput {
+  flex: 2;
+  height: 36px;
+}
+
+.ingAmountInput {
+  flex: 1.1;
+  height: 36px;
+}
+
+.ingUnitInput {
+  flex: 0.9;
+  height: 36px;
+}
+
+.removeIngRowBtn {
+  width: 30px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  border: none;
+  flex-shrink: 0;
+  transition: all 0.16s ease;
+}
+
+.removeIngRowBtn:active {
+  background: #fdf5f5;
+  color: var(--color-danger);
+}
+
+/* 表单底部动作 */
+.modalActions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+  padding-top: 12px;
+  border-top: 1px solid var(--color-border-light);
+}
+
+.cancelBtn {
+  flex: 1;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-subtle);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  border: none;
+}
+
+.cancelBtn:active {
+  transform: scale(0.97);
+}
+
+.saveSubmitBtn {
+  flex: 1.8;
+  height: 44px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(206, 101, 111, 0.28);
+  border: none;
+}
+
+.saveSubmitBtn:active {
+  transform: scale(0.97);
+  background: var(--color-primary-dark);
+}
+
+/* 删除二次确认弹窗 */
+.confirmBox {
+  width: 85%;
+  max-width: 310px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 22px 18px 18px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(40, 36, 33, 0.12);
+  margin: auto;
+  animation: popIn 0.22s cubic-bezier(0.34, 1.56, 0.64, 1);
+  border: 1px solid var(--color-border-light);
+}
+
+.confirmEmoji {
+  font-size: 34px;
+  margin-bottom: 8px;
+}
+
+.confirmTitle {
+  font-size: 16.5px;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: 6px;
+}
+
+.confirmDesc {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin-bottom: 18px;
+}
+
+.confirmDesc strong {
+  color: var(--color-text);
+}
+
+.confirmActions {
+  display: flex;
+  gap: 8px;
+}
+
+.confirmCancelBtn {
+  flex: 1;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--color-surface-subtle);
+  color: var(--color-text);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  border: none;
+}
+
+.confirmCancelBtn:active {
+  transform: scale(0.96);
+}
+
+.confirmDeleteBtn {
+  flex: 1;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--color-danger);
+  color: #ffffff;
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  box-shadow: 0 2px 8px rgba(214, 90, 90, 0.3);
+  border: none;
+}
+
+.confirmDeleteBtn:active {
+  transform: scale(0.96);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes popIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -1,0 +1,361 @@
+.homeBtn {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary-light);
+  font-weight: 500;
+  border: 1px solid rgba(206, 101, 111, 0.2);
+  transition: opacity 0.16s ease;
+}
+
+.homeBtn:active {
+  opacity: 0.7;
+}
+
+/* 备注小信纸 */
+.noteCard {
+  margin: 0 var(--space-md) 14px;
+  padding: 12px 14px;
+  background: #FAF3F4;
+  border: 1px dashed rgba(206, 101, 111, 0.3);
+  border-radius: var(--radius-md);
+}
+
+.noteHeader {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.noteIcon {
+  font-size: 14px;
+}
+
+.noteLabel {
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  color: var(--color-primary);
+}
+
+.noteText {
+  font-size: var(--font-size-sm);
+  color: var(--color-text);
+  line-height: 1.5;
+  font-style: italic;
+  padding-left: 2px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 模块容器 */
+.section {
+  padding: 0 var(--space-md);
+  margin-bottom: 20px;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.sectionTitle {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.countBadge {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 1.5px 7px;
+  border-radius: var(--radius-full);
+}
+
+/* 一键买齐按钮 */
+.quickCheckBtn {
+  font-size: 11px;
+  color: var(--color-success);
+  background: #edf6f0;
+  border: 1px solid rgba(82, 155, 101, 0.25);
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  font-weight: 600;
+  transition: opacity 0.16s ease;
+}
+
+.quickCheckBtn:active:not(:disabled) {
+  opacity: 0.7;
+}
+
+.quickCheckDone {
+  color: #437f53;
+  background: #e1f0e6;
+  border-color: rgba(82, 155, 101, 0.4);
+  cursor: default;
+}
+
+/* 菜品列表 */
+.dishList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.dishCard {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+}
+
+.dishThumb {
+  width: 46px;
+  height: 46px;
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.dishEmoji {
+  font-size: 22px;
+}
+
+.dishImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.dishInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.dishName {
+  display: block;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 2px;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.dishTime {
+  display: block;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+}
+
+/* 采购清单卡片 */
+.checklistCard {
+  background: var(--color-surface);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--color-border-light);
+  overflow: hidden;
+}
+
+.checkRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-border-light);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.16s ease;
+}
+
+.checkRow:last-child {
+  border-bottom: none;
+}
+
+.checkRow:active {
+  background: var(--color-surface-subtle);
+}
+
+.checkRowDone {
+  background: #fcfbf8;
+}
+
+/* 复选框 */
+.checkboxWrapper {
+  flex-shrink: 0;
+}
+
+.box {
+  width: 20px;
+  height: 20px;
+  border-radius: 5px;
+  border: 1.5px solid #cac6be;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #ffffff;
+  transition: all 0.16s ease;
+}
+
+.boxChecked {
+  background: var(--color-success);
+  border-color: var(--color-success);
+}
+
+/* 食材文字 */
+.itemMain {
+  flex: 1;
+  min-width: 0;
+}
+
+.itemTitleRow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.itemName {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  transition: color 0.16s ease;
+}
+
+.nameDone {
+  color: var(--color-text-light);
+  text-decoration: line-through;
+}
+
+.doneBadge {
+  font-size: 10px;
+  color: var(--color-success);
+  background: #eef6f1;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  font-weight: 500;
+}
+
+.fromDishes {
+  display: block;
+  font-size: 11px;
+  color: var(--color-text-secondary);
+  margin-top: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 用量 */
+.amountArea {
+  flex-shrink: 0;
+}
+
+.amountText {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--color-primary);
+  background: var(--color-primary-light);
+  padding: 2.5px 8px;
+  border-radius: var(--radius-full);
+}
+
+.amountDone {
+  color: var(--color-text-light);
+  background: var(--color-surface-subtle);
+  font-weight: 400;
+  text-decoration: line-through;
+}
+
+.noIngredientsTip {
+  text-align: center;
+  font-size: var(--font-size-xs);
+  color: var(--color-text-secondary);
+  padding: 20px 0;
+}
+
+/* 底部操作 */
+.bottomBar {
+  padding: 10px var(--space-md) calc(20px + var(--safe-area-bottom));
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.saveHistoryBtn {
+  width: 100%;
+  height: 48px;
+  border-radius: var(--radius-full);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(206, 101, 111, 0.28);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  transition: all 0.16s ease;
+}
+
+.saveHistoryBtn:active:not(:disabled) {
+  transform: scale(0.97);
+  background: var(--color-primary-dark);
+}
+
+.saveHistoryDone {
+  background: #ded9d0;
+  color: #7a756e;
+  box-shadow: none;
+  cursor: default;
+}
+
+/* 错误与空状态 */
+.errorWrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px var(--space-md);
+}
+
+.goHomeBtn {
+  background: var(--color-primary);
+  color: #ffffff;
+  padding: 11px 24px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 14px rgba(206, 101, 111, 0.28);
+  border: none;
+  margin-top: -10px;
+}
+
+.goHomeBtn:active {
+  transform: scale(0.97);
+}
+
+.btnArrow {
+  font-size: 11px;
+}

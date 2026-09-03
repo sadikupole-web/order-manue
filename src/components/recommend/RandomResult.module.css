@@ -1,0 +1,16 @@
+.result {
+  padding: 0 var(--space-md);
+}
+
+.hint {
+  text-align: center;
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-md);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
